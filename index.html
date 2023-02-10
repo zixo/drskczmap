@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='idth=device-width, initial-scale=1'/>
+  <meta charset=utf-8 />
+  <title>Leaflet</title>
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+   <style>
+       body {
+           padding: 0;
+           margin: 0;
+       }
+       html, body, #map {
+           height: 100%;
+           width: 100%;
+       }
+   </style>
+</head>
+<body>
+	<div id="map"></div>
+<script>
+
+	const map = L.map('map').setView([48.167507251201485, 17.098024043936046], 13);
+
+	const marker = L.marker([48.167507251201485, 17.098024043936046]).addTo(map)
+		.bindPopup('<b>Node Info</b><br />zx');
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+</script>
+</body>
+</html>
